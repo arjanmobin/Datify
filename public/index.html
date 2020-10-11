@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Datify - Visualize Music Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" integrity="sha256-qS+snwBgqr+iFVpBB58C9UCxKFhyL03YHpZfdNUhSEw=" crossorigin="anonymous" />
+
+    <style type="text/css">
+      #login, #loggedin {
+        display: none;
+      }
+      /* .text-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 500px;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="login">
+        <h1>Login with your Spotify account to use Datify now.</h1>
+        <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+      </div>
+      <div id="loggedin" style="border-bottom: 1px solid black; padding: 5px;">
+        <div id="user-profile" >
+        </div>
+        <div id="oauth">
+        </div>
+      </div>
+
+      <div id="top-songs">
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <div class="level ">
+
+        <div class="level-item has-text-centered">
+            <div>
+            <img id="profile-pic" class="is-rounded media-object image is-128x128" width="150" src="{{images.0.url}}" style="border-radius: 50%;"/>
+            </div>
+        </div>
+        
+        <div class="level-item has-text-centered">
+          <div>
+          <p class="title">Datify</p>
+          <p class="subtitle is-7" style="margin-top: 2px;">by Arjan Mobin</p>
+
+  
+          </div>
+      </div>
+
+        <div class="level-item has-text-centered">
+          <div>
+          <p class="heading">User</p>
+          <p class="title">{{display_name}}</p>
+          <p class="subtitle is-5" style="margin-top: 2px;">{{id}}</p>
+          </div>
+      </div>   
+    </div>
+
+    </script>
+
+    <script id="oauth-template" type="text/x-handlebars-template">
+      <h2>oAuth info</h2>
+      <dl class="dl-horizontal">
+        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+      </dl>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="client.js"></script>
+    <script src="auth.js"></script>
+
+
+</html>
