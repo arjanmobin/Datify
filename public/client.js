@@ -25,6 +25,3 @@ function doClientShit() {
         return hashParams;
       }
 }
-//test
-
-//2
